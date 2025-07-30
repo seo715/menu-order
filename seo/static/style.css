@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #6d7b8d, #8d99ae);
+    color: #edf2f4;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(19, 30px);
+    grid-template-rows: repeat(19, 30px);
+    background-color: #d2b48c;
+    border: 5px solid #8b5e3c;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0,0,0,0.2);
+    padding: 5px;
+    width: 580px;
+    height: 580px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #a08c6e;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:hover::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+
+.stone {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease-out;
+}
+
+.stone.black {
+    background: radial-gradient(circle at 7px 7px, #4d4d4d, #000);
+}
+
+.stone.white {
+    background: radial-gradient(circle at 7px 7px, #fff, #d4d4d4);
+}
+
+#game-status {
+    margin: 25px 0;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-align: center;
+    min-height: 40px;
+}
+
+#reset-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #fff;
+    background-image: linear-gradient(to right, #ef233c, #d90429);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(239, 35, 60, 0.4);
+}
+
+#reset-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(239, 35, 60, 0.6);
+}
